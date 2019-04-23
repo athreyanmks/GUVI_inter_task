@@ -1,34 +1,122 @@
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link rel="stylesheet" href="main.css">
   <script src="main.js"></script>
+  <script src="jquery_cookie.js"></script>
+  <script src="index.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 
 </head>
 <body>
-  <div id="registerDiv">
-    <form id="register" action="" >
-      <span>First Name:     </span><input id="fname" type="text" name="fname" placeholder="First Name"><br>
-      <span>Last Name:      </span><input id="lname" type="text" name="lname" placeholder="Last Name"><br>
-      <span>Userame:      </span><input id="uname" type="text" name="uname" placeholder="Username"><br>
-      <span>Password:       </span><input id="pwd" type="password" name="pwd" placeholder="Password"><br>
-      <span>Repeat Password:</span><input id="rpwd" type="password" name="rpwd" placeholder="Repeat Password"><br>
-    </form>
-    <button id="subReg">Register</button><br>
-    <span>Already registered? Please Login.</span><br>
-    <button id="lform">Login Form</button>
+
+  <div class="navbar navbar-inverse">
+  <div class="row" class="container-fluid">
+    <div class="col-sm-1">
+      <span class="navbar-brand">Register/Login</span>
+    </div>
+    <div class="col-sm-11">
+    </div>
+  </div>
+</div>
+
+  <div class="row">
+  </div>
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col-sm-4">
+      </div>
+      <div class="col-sm-2">
+        <div id="registerDiv">
+
+          <div class="form-group">
+            <span>First Name:     </span><br>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-font"></i></span>
+              <input id="fname" type="text" name="fname" placeholder="First Name" class="form-control"><br>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <span><b>Last Name:     </b> </span><br>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-font"></i></span>
+              <input id="lname" type="text" name="lname" placeholder="Last Name" class="form-control"><br>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <span>Username:      </span><br>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input id="uname" type="text" name="uname" placeholder="Username" class="form-control">
+            </div>
+            <span id="unameCheck" > </span>
+          </div>
+
+          <div class="form-group">
+            <span>Password:       </span><br>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+              <input id="pwd" type="password" name="pwd" placeholder="Password" class="form-control"><br>
+            </div>
+
+          </div>
+          <div class="form-group">
+            <span>Repeat Password:</span><br>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+              <input id="rpwd" type="password" name="rpwd" placeholder="Repeat Password" class="form-control"><br>
+              <span class="" id="errchk"></span>
+            </div>
+          </div>
+
+          <button id="subReg">Register</button><br><br>
+
+          <span>Already registered? Please Login.</span><br>
+          <button id="lform">Login Form</button>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div id="loginDiv">
+          <div class="form-group">
+            <span>Username:     </span><br>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input id="luname" type="text" name="fname" placeholder="Username" class="form-control"><br>
+            </div>
+          </div>
+          <div class="form-group">
+            <span>Password:       </span><br>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+              <input id="lpwd" type="password" name="pwd" placeholder="Password" class="form-control"><br>
+            </div>
+          </div>
+
+
+
+          <button id="subLog">Login</button><br><br>
+          <span>Not registered yet? PLease Register.</span><br>
+          <button id="rform">Register Form</button>
+        </div>
+      </div>
+      <div class="col-sm-4">
+      </div>
+    </div>
+
+
+
   </div>
 
-  <div id="loginDiv">
-    <form id="login" action="">
-      <span>Username:     </span><input id="luname" type="text" name="fname" placeholder="First Name"><br>
-      <span>Password:       </span><input id="lpwd" type="password" name="pwd" placeholder="Password"><br>
-    </form>
-    <button id="subLog">Register</button><br>
-    <span>Not registered yet? PLease Register.</span><br>
-    <button id="rform">Register Form</button>
-  </div>
+
 </body>
 </html>
