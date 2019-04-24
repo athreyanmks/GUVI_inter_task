@@ -1,10 +1,14 @@
 <?php
 session_start();
+
+include "database_cred.php";
+
+
 if($_POST['id'] == $_SESSION['id'])
 {
   $id = $_SESSION['id'];
 
-  $conn = mysqli_connect("localhost", "root","apple123","guviInternTask");
+  $conn = mysqli_connect("localhost", $dbmsuname,$dbmspwd,"guviInternTask");
   $result = $conn->query("SELECT * FROM userinfo WHERE id = '$id'");
   //$sttmnt->bind_param("i",$id);
   //$result = $sttmnt->execute();

@@ -159,3 +159,21 @@ $(document).ready(function(){
     });
   });
 });
+
+$(document).ready(function(){
+  $("#testdb").click(function(){
+
+    console.log("clicked");
+
+      $.ajax
+      ({
+        url : "database_cred.php",
+        cache: false,
+        success: function(result)
+        {
+          console.log(result);
+        }
+      });
+
+  });
+});

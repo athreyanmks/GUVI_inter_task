@@ -7,7 +7,8 @@ $id = $_SESSION['id'];
 //echo $dob;
 //echo $age;
 //echo $cont;
-$conn = mysqli_connect("localhost", "root","apple123","guviInternTask");
+include "database_cred.php";
+$conn = mysqli_connect("localhost", $dbmsuname,$dbmspwd,"guviInternTask");
 
 if(!$conn->query("SHOW TABLES LIKE 'adddet'")->num_rows)
 {

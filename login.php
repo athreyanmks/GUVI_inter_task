@@ -1,8 +1,11 @@
 <?php
 
+
+
 session_start();
 
-$conn = mysqli_connect("localhost", "root","apple123","guviInternTask");
+include "database_cred.php";
+$conn = mysqli_connect("localhost", $dbmsuname,$dbmspwd,"guviInternTask");
 
 $uname = $_POST['uname'];
 $pwd = $_POST['pwd'];

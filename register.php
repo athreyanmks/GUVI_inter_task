@@ -1,19 +1,26 @@
 <?php
 
-$conn = mysqli_connect("localhost", "root","apple123");
+include "database_cred.php";
+
+//echo $dbmsuname;
+//echo $dbmspwd;
+
+$conn = mysqli_connect("localhost", $dbmsuname,$dbmspwd);
+
+//echo $conn;
 
 
 
 $sql = "CREATE DATABASE IF NOT EXISTS guviInternTask";
 if ($conn->query($sql) === TRUE) {
-    //echo "Database created successfully";
+    echo "Database created successfully";
 } else {
-    //echo "Error creating database: " . $conn->error;
+    echo "Error creating database: " . $conn->error;
 }
 
 mysqli_close($conn);
 
-$conn = mysqli_connect("localhost", "root","apple123","guviInternTask");
+$conn = mysqli_connect("localhost", $dbmsuname,$dbmspwd,"guviInternTask");
 
 if(!$conn->query("SHOW TABLES LIKE 'userinfo'")->num_rows)
 {
