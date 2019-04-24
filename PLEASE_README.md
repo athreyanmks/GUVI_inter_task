@@ -1,5 +1,6 @@
 # GUVI_intern_task
 > A project by athreyanmks
+**ALERT! Before running please make sure the correct credentials for your DBMS are in the database_cred.txt file so the MySQL queries are successful**
 ## Register/Login Page
 
 The **Register** and **Login** form are on the same page and can be accesed using the appropriate toggle buttons
