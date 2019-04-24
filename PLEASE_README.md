@@ -1,5 +1,6 @@
 # GUVI_intern_task
-> A project by athreyanmks
+  > A project by athreyanmks
+
 **ALERT! Before running please make sure the correct credentials for your DBMS are in the database_cred.txt file so the MySQL queries are successful**
 ## Register/Login Page
 
