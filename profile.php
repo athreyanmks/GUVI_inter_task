@@ -9,18 +9,21 @@ if($_POST['id'] == $_SESSION['id'])
   $id = $_SESSION['id'];
 
   $conn = mysqli_connect("localhost", $dbmsuname,$dbmspwd,"guviInternTask");
-  $result = $conn->query("SELECT * FROM userinfo WHERE id = '$id'");
-  //$sttmnt->bind_param("i",$id);
-  //$result = $sttmnt->execute();
+  $sttmnt = $conn->prepare("SELECT * FROM userinfo WHERE id = ? ");
+  $sttmnt->bind_param("i",$id);
+  $sttmnt->execute();
+  $result = $sttmnt->get_result();
   $row = $result->fetch_assoc();
 
   $jsonObj->fname = $row['fname'];
   $jsonObj->lname = $row['lname'];
   $jsonObj->uname = $row['uname'];
 
-  $sql = "SELECT * FROM adddet WHERE id = '$id'";
+  $sttmnt = $conn->prepare("SELECT * FROM adddet WHERE id = ? ");
 
-  $result = $conn->query($sql);
+  $sttmnt->bind_param("i",$id);
+  $sttmnt->execute();
+  $result = $sttmnt->get_result();
   $row = $result->fetch_assoc();
 
   $jsonObj->dob = $row['dob'];

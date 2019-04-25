@@ -12,9 +12,11 @@ $pwd = $_POST['pwd'];
 
 $pwd = sha1($pwd);
 
-$sql = "SELECT id FROM userinfo where uname = '$uname' AND pwd = '$pwd'";
+$sttmnt = $conn->prepare("SELECT id FROM userinfo where uname = ? AND pwd = ? ");
+$sttmnt->bind_param("ss",$uname,$pwd);
+$sttmnt->execute();
 
-$result = $conn->query($sql);
+$result = $sttmnt->get_result();
 
 $row = $result->fetch_assoc();
 
